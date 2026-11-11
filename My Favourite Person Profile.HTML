@@ -1,0 +1,56 @@
+<!--Build a My Favourite Person Profile webpage using HTML, Bootstrap and JavaScript. You will create an object to store profile information and display its properties using dot notation and bracket notation.-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>My Favourite Person Profile</title>
+    </head>
+    <body>
+        <h1 id="my-favourite-person-profile">My Favourite Person Profile</h1>
+        <p>This activity demonstrates the use of JavaScript objects and how to access their properties using dot notation and bracket notation.</p>
+        <p id="profile-details"></p>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Profile Details</h2>
+                    <p id="profile-details1"></p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Profile Information</h5>
+                            <p class="card-text" id="profile-details2"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            // Create a profile object with your favourite person's details
+            let profile = {
+                firstName: "Ben",
+                lastName: "Dover",
+                age: 30,
+                occupation: "Software Engineer",
+                hobbies: ["Reading", "Traveling", "Gaming"]
+            };
+
+            // Display profile details using dot notation
+            document.getElementById("profile-details1").innerHTML = `
+                <strong>First Name:</strong> ${profile.firstName}<br>
+                <strong>Last Name:</strong> ${profile.lastName}<br>
+                <strong>Age:</strong> ${profile.age}<br>
+                <strong>Occupation:</strong> ${profile.occupation}<br>
+                <strong>Hobbies:</strong> ${profile.hobbies.join(", ")}
+                `;
+            document.getElementById("profile-details2").innerHTML = `
+                <strong>First Name:</strong> ${profile["firstName"]}<br>
+                <strong>Last Name:</strong> ${profile["lastName"]}<br>
+                <strong>Age:</strong> ${profile["age"]}<br>
+                <strong>Occupation:</strong> ${profile["occupation"]}<br>
+                <strong>Hobbies:</strong> ${profile["hobbies"].join(", ")}
+            `;
+        </script>
+    </body>
+</html>
